@@ -1,0 +1,38 @@
+arecord -l
+
+From this command, you should see something like below appear in the terminal.
+
+The two things you need to pay attention to is the card number and the device number.
+
+**** List of CAPTURE Hardware Devices ****
+card 1: Microphone [Yeti Stereo Microphone], device 0: USB Audio [USB Audio]
+Subdevices: 1/1
+Subdevice #0: subdevice #0
+
+Once you have identified your microphone’s device numbers, proceed to the next step.
+
+If nothing appears, then make sure you have plugged your device in properly.
+
+With our device and card numbers now handy, let’s go ahead and create a configuration file for Alsa.
+
+This configuration file will help the Alsa driver understand what device it should be using for capturing audio.
+
+Begin modifying the file by running the following command.
+
+nano /home/pi/.asoundrc
+Copy
+
+Within this file, enter the following text.
+
+Make sure that you replace [card number] and [device number] with the values you retrieved in step 3 of this section.
+
+pcm.!default {
+  type asym
+  capture.pcm "mic"
+}
+pcm.mic {
+  type plug
+  slave {
+    pcm "hw:[card number],[device number]"
+  }
+}
