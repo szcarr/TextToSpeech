@@ -15,5 +15,5 @@ nameOfMicrophone = "<device name( in arecord -l)>"
 After all these have been set you can run:
 You can then do:<br>
 python3 livespeechserver.py    <----  on the server<br>
-python3 livespeechclient.py    <----  on the client
+python3 main.py    <----  on the client
 <br>
