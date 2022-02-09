@@ -5,6 +5,6 @@ git add .
 git commit -m "New version"
 git remote rm origin
 git remote add origin https://github.com/szcarr/TextToSpeech.git
-git pull origin main
-git push -f origin main
+git pull origin master
+git push -f origin master
 pause
