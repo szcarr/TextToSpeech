@@ -8,6 +8,7 @@ Change:
 USER = "<username>"
 IP = "<ip address>"
 <br>
+<br>
 In micsetup.py change value for nameOfMicrophone to match the name of the device in "arecord -l" (Does not need to be 100% accurate)
 nameOfMicrophone = "<Device name( in arecord -l)>"  
 <br>
