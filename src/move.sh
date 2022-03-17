@@ -7,7 +7,7 @@ cd ..
 #USER="isak"
 #IP="192.168.1.131"
 USER="pi"
-IP="192.168.1.144"
+IP="192.168.1.175"
 
 rm -rf TextToSpeech.zip
 zip -r TextToSpeech.zip TextToSpeech

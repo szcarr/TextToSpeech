@@ -1,4 +1,5 @@
 import time
+import os
 
 import speech
 import threadedspeech
@@ -23,6 +24,7 @@ modeList = {
     "exit": "exit | Exits current program | Syntax: exit",
 }
 
+os.system("chmod 700 ./clientsetup.sh")
 livespeechclient.setupClient()
 
 def menu():
