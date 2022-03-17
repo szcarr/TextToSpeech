@@ -13,6 +13,6 @@ nameOfMicrophone = "<device name( in arecord -l)>"
 <br>
 After all these have been set you can run:
 You can then do:<br>
-vlc tcp:wav//"<ClientsIP>":5002 <----  in terminal on the server <br>
+vlc tcp:wav//"(ClientsIP)":5002 <----  in terminal on the server <br>
 python3 main.py (streammic)   <----  on the client
 <br>
