@@ -116,6 +116,6 @@ def printModes():
 -------------------------MAIN PROGRAM-------------------------
 '''
 
-printQuickButtons()
+#printQuickButtons()
 #printModes()
-#menu()
+menu()
