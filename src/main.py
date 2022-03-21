@@ -9,9 +9,9 @@ import livespeechclient
 exitProgram = False
 
 modeList = {
-    "mic": "mic | Requests microphone input from client | Syntax: mic",
     "streammic": "Stream microphone | Requests microphone input from client and streams it (ish) | Syntax: streammic",
     "s": "s | Transforms text to speech | Syntax: s <string>",
+    "sc": "sc | Speaks continuously | Syntax: sc <string> <durationBetweenSenteces>",
     "cv": "cv | Changes voice. See list from the 'vh' command | Syntax: cv <language code>",
     "delstats": "delstats | Resets statistics | Syntax: delstats",
     "vh": "vh | See all voice languages | Syntax: vh",
@@ -68,6 +68,8 @@ def checkModes(mode):
             livespeechclient.startRecording()
         elif modeList[0] == "streammic": #REQUESTS MIC INPUT FROM CLIENT
             livespeechclient.streamMicrophone()
+        elif modeList[0] == "sc":
+            speech.speakContinuously(modeList[1], modeList[2])
         elif modeList[0] == "thd":
             threadedspeech.startThreads(int(modeList[1]))
         elif modeList[0] == "setvc":
@@ -77,7 +79,6 @@ def checkModes(mode):
                 speech.defaultPreset()
         elif int(modeList[0]) > -1 and int(modeList[0]) < 10:
             speech.quickWord(modeList[0])
-        
 
     except IndexError as i:
         print(i)
@@ -95,11 +96,9 @@ def exit():
 
 def printQuickButtons():
     keysForModeList = list(speech.quickWordList.keys())
-    counter = 0
     print("\n-------------------------HELP-------------------------")
     for key in keysForModeList:
-        counter += 1
-        print(str(counter) + ": " + str(speech.quickWordList.get(key)))
+        print(key + ": " + str(speech.quickWordList.get(key)))
     
     speech.printCurrentSelectedLanguage()
 
@@ -117,5 +116,6 @@ def printModes():
 -------------------------MAIN PROGRAM-------------------------
 '''
 
-#printQuickButtons()
-menu()
+printQuickButtons()
+#printModes()
+#menu()

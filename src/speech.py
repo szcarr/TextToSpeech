@@ -58,6 +58,7 @@ quickWordList = {
     "3": "Kan du hjelpe meg?",
     "4": "Vil du høyre en quote?",
     "5": "Ta tommel opp framfor kamera for ja!",
+    "6": "Jeg er en robot, beep, boop!",
     "7": "Magnus er ein ukjent skapning som vart observert i taket i 2021 på 1ELB klasserommet. Vi gav magnus ein pakke med sopp som ei offring til magnus. Magnus er no mutert og blitt ein del av skulen.",
     "8": "Au!",
     "9": "Jeg skal ta over verden!",
@@ -229,3 +230,16 @@ def randomSentence():
 def randomQuote():
     defaultPreset()
     speak(fortune.generateRandomQuote())
+
+def speakContinuously(word, *args):
+    '''
+    args is seconds between words.
+    '''
+
+    dur = 1
+    if args:
+        dur = int(args[0])
+
+    while True:
+        speak(str(word))
+        time.sleep(dur)
